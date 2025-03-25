@@ -9,8 +9,6 @@ const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 
 
-
-
 function getComputerChoice(userChoice) {
     const choices = ['r', 'p', 's'];
     
@@ -37,20 +35,16 @@ function getComputerChoice(userChoice) {
         return choices[Math.floor(Math.random() * 3)];
     }
     else if (difficulty.value === 'impossible') {
-        // Mindig nyer
-        if (userChoice === 'r') return 'p';
-        if (userChoice === 'p') return 's';
-        if (userChoice === 's') return 'r';
+        // 99% eséllyel nyer, 1% véletlen
+        if (Math.random() < 0.99) {
+            if (userChoice === 'r') return 'p';
+            if (userChoice === 'p') return 's';
+            if (userChoice === 's') return 'r';
+        }
+        return choices[Math.floor(Math.random() * 3)];
     }
 }
 
-/*
-function getComputerChoice() {
-    const choices = ['r', 'p', 's'];
-    const randomNumber = Math.floor(Math.random() * 3);
-    return choices[randomNumber];
-}
-*/
 
 function convertToWord(letter) {
     if (letter === "r") return "Kő";
@@ -63,7 +57,7 @@ function win(userChoice, computerChoice) {
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = convertToWord(userChoice) + " Erősebb a(z) " + convertToWord(computerChoice) + "-nál/nél, Nyertél!";
+    result_p.innerHTML = convertToWord(userChoice) + " Erősebb mint a(z) " + convertToWord(computerChoice) + ", Nyertél!";
     userChoice_div.classList.add('green-glow'); 
     setTimeout(function() {userChoice_div.classList.remove('green-glow')}, 500);
 }
@@ -74,7 +68,7 @@ function lose(userChoice,computerChoice) {
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = convertToWord(userChoice) + " Gyengébb a(z) " + convertToWord(computerChoice) + "-nál/nél, Vesztettél!";   
+    result_p.innerHTML = convertToWord(userChoice) + " Gyengébb mint a(z) " + convertToWord(computerChoice) + ", Vesztettél!";   
     userChoice_div.classList.add('red-glow'); 
     setTimeout(function() {userChoice_div.classList.remove('red-glow')}, 500);
 }
@@ -82,7 +76,7 @@ function draw(userChoice,computerChoice) {
     const userChoice_div = document.getElementById(userChoice);
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = convertToWord(userChoice) + " Megegyezik " + convertToWord(computerChoice) + "-val/vel, Döntetlen!";    
+    result_p.innerHTML = convertToWord(userChoice) + " Ugyanaz mint a(z) " + convertToWord(computerChoice) + ", Döntetlen!";    
     userChoice_div.classList.add('yellow-glow'); 
     setTimeout(function() {userChoice_div.classList.remove('yellow-glow')}, 500);
 }

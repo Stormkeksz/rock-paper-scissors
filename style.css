@@ -114,7 +114,14 @@ header >div > h1 {
     box-shadow: 0 0 10px yellow;
 }
 
+/*Reszponzívitás*/
 
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 80%;
+    }
+
+}
 
 
 
