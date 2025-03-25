@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kő papír olló Játék</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <header>
+        <div><h1>Kő Papír Olló</h1></div>
+        <div>
+            <label for="difficulty">Nehézség</label>
+        <select name="difficulty" id="difficulty">
+            <option value="easy">Könnyű</option>
+            <option value="normal">Normál</option>
+            <option value="hard">Nehéz</option>
+            <option value="impossible">Lehetetlen</option>
+        </select>
+        </div>
+    </header>
+    
+    <div class="score-board" style="text-align: center;">
+        <div id ="user-label" class ="badge">Felhasználó</div>
+        <div id ="computer-label" class ="badge">Gép</div>
+        <span id="user-score">0</span>:<span id="computer-score">0</span>
+    </div>
+
+    <div class="result">
+        <p>Eredmény</p>
+    </div>
+
+    <p id="action-message">Válassz!</p>
+
+    <div class="choices">
+        <div class="choice" id="r">
+            <img src="Images/rockCropped.png" alt="Kő" style="width: 75px;">
+        </div>
+        <div class="choice" id="p">
+            <img src="Images/paperCropped.png" alt="Papír" style="width: 75px;">
+        </div>
+        <div class="choice" id="s">
+            <img src="Images/scissorCropped.png" alt="Olló" style="width: 75px;">
+        </div>
+    </div>
+
+    
+    <script src="app.js" charset="UTF-8"></script>
+</body>
+</html>
+

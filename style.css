@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #403A3A;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    display: flex;
+    padding: 0 15%;
+}
+
+header >div > h1 {
+    color: #403A3A;
+    text-align: center;
+}
+
+
+.score-board {
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 4px;
+    text-align: center;
+    width: 200px;
+    color: white;
+    font-size: 45px;  
+    padding: 15px 20px;  
+    position: relative;
+}
+
+.badge {
+    background: #C93C20;
+    color: white;
+    font-size: 15px;
+    padding: 2px 10px;
+}
+
+
+#user-label {
+    position: absolute;
+    top: 30px;
+    left: -50px;
+}
+
+#computer-label {
+    position: absolute;
+    top: 30px;
+    right: -25px;
+}
+
+.result {
+    font-size: 40px;
+    color: white;
+}
+
+.result > p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.choices {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.choice {
+    border: 4px solid white;
+    border-radius: 50%;
+    margin: 0 20px;
+    padding: 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.choice:hover {
+    cursor: pointer;
+    background: white;
+}
+
+#action-message {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 30px ;
+}
+
+.difficulty-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.green-glow {
+    border: 4px solid green;
+    box-shadow: 0 0 10px green;
+}
+
+.red-glow {
+    border: 4px solid red;
+    box-shadow: 0 0 10px red;
+}
+
+.yellow-glow {
+    border: 4px solid yellow;
+    box-shadow: 0 0 10px yellow;
+}
+
+
+
+
+
